@@ -1,32 +1,18 @@
-# Prerequisites
-*.d
+# .gitignore
+#       git initとしたフォルダーに.gitignore ファイルを作れば、
+#       そこに書かれたファイルは git のバージョン管理から無視されます。
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# [書き方]
+#       行頭に # を書くとその行はコメントとみなされ、無視されます
+#       *.a         # .a ファイルは無視
+#       !lib.a          # しかし、lib.a ファイルだけは .a であっても追跡対象とします
+#       /TODO       # ルートディレクトリの TODO ファイルだけを無視し、サブディレクトリの TODO は無視しません
+#       build/      # build/ ディレクトリのすべてのファイルを無視します
+#       doc/*.txt   # doc/notes.txt は無視しますが、doc/server/arch.txt は無視しません
+bin/
+obj/
+**/tags
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# .gitignore ファイル自体は管理したい
+#       ! は、無視の打ち消し、すなわち無視しない
+!.gitignore
